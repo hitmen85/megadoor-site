@@ -1,3 +1,6 @@
+// ================================
+// Translations dictionary (RO + RU)
+// ================================
 const translations = {
   ro: {
     brandTitle: "Uși de interior și exterior",
@@ -18,7 +21,7 @@ const translations = {
 
     extTitle: "Uși exterior",
     extText:
-      "Uși metalice și termoizolate, ideale pentru case, apartamente și spații comerciale. Siguranță, izolație fonică și termică, design modern.",
+      "Uși metalice și termoizolate, ideale pentru case, apartamente și spații comerciale.",
     extCard1Title: "Uși de intrare blindate",
     extCard1Text:
       "Protecție sporită, multiple puncte de închidere, finisaje moderne și clasice.",
@@ -28,13 +31,12 @@ const translations = {
 
     intTitle: "Uși interior",
     intText:
-      "Uși pentru camere, bucătării, băi și birouri. Gamă variată de culori, finisaje și dimensiuni.",
+      "Uși pentru camere, bucătării, băi și birouri. Gamă variată de culori și dimensiuni.",
     intCard1Title: "Uși laminate / furnir",
-    intCard1Text:
-      "Aspect natural, rezistență bună și întreținere ușoară.",
+    intCard1Text: "Aspect natural, rezistență bună și întreținere ușoară.",
     intCard2Title: "Uși din sticlă",
     intCard2Text:
-      "Potrivite pentru birouri și spații moderne, lasă lumina să circule.",
+      "Potrivite pentru spații moderne și birouri, lasă lumina să circule.",
 
     pvcTitle: "Termopane / PVC",
     pvcText:
@@ -61,8 +63,9 @@ const translations = {
     formName: "Nume",
     formPhone: "Telefon",
     formMessage: "Mesaj",
-    formSubmit: "Trimite mesajul",
+    formSubmit: "Trimite"
   },
+
   ru: {
     brandTitle: "Межкомнатные и входные двери",
     navHome: "Главная",
@@ -88,31 +91,30 @@ const translations = {
       "Повышенная защита, несколько точек запирания, современные и классические отделки.",
     extCard2Title: "Двери для частных домов",
     extCard2Text:
-      "Устойчивы к погодным условиям, с декоративными панелями и закаленным стеклом.",
+      "Устойчивы к погодным условиям, декоративные панели, закаленное стекло.",
 
     intTitle: "Межкомнатные двери",
     intText:
-      "Двери для комнат, кухонь, ванных и офисов. Широкий выбор цветов и отделок.",
+      "Двери для комнат, кухонь, ванных и офисов. Большой выбор цветов и отделок.",
     intCard1Title: "Ламинированные / шпон",
-    intCard1Text:
-      "Натуральный вид, хорошая износостойкость и простой уход.",
+    intCard1Text: "Натуральный вид, высокая прочность и легкий уход.",
     intCard2Title: "Стеклянные двери",
     intCard2Text:
-      "Идеальны для современных офисов и помещений, пропускают больше света.",
+      "Идеальны для современных офисов и помещений, пропускают много света.",
 
     pvcTitle: "Окна / ПВХ",
     pvcText:
-      "ПВХ-окна и двери с двухкамерными и трехкамерными стеклопакетами.",
+      "ПВХ-окна и двери с тепло- и шумоизоляционными стеклопакетами.",
     pvcBullet1: "Профиль 5–7 камер",
-    pvcBullet2: "Стеклопакет с тепло- и шумоизоляцией",
-    pvcBullet3: "Профессиональный монтаж и настройка фурнитуры",
+    pvcBullet2: "Тепло- и шумоизоляционный стеклопакет",
+    pvcBullet3: "Профессиональный монтаж и настройка",
 
     saleTitle: "Двери со скидкой",
     saleText:
       "Акционные модели дверей, ограниченное количество. Отлично для ремонта.",
     saleBadge: "-20% до -40%",
     saleNote:
-      "За актуальной информацией о скидках обращайтесь по телефону или через форму.",
+      "За актуальной информацией обращайтесь по телефону или через форму.",
 
     contactTitle: "Контакты",
     contactText:
@@ -125,16 +127,21 @@ const translations = {
     formName: "Имя",
     formPhone: "Телефон",
     formMessage: "Сообщение",
-    formSubmit: "Отправить",
-  },
+    formSubmit: "Отправить"
+  }
 };
 
+// ============================
+// Apply selected language
+// ============================
 function setLanguage(lang) {
   const dict = translations[lang];
   if (!dict) return;
 
+  // Set <html lang="xx">
   document.documentElement.lang = lang;
 
+  // Replace all elements with data-i18n keys
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     if (dict[key]) {
@@ -142,16 +149,25 @@ function setLanguage(lang) {
     }
   });
 
+  // Highlight the active language button
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.lang === lang);
   });
 }
 
-document.querySelectorAll(".lang-btn").forEach((btn) => {
-  btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+// ============================
+// Init on page load
+// ============================
+document.addEventListener("DOMContentLoaded", () => {
+  // Set footer year dynamically
+  const yearElement = document.getElementById("year");
+  if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+  // Default language is Romanian
+  setLanguage("ro");
+
+  // Add click listeners for language buttons
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
 });
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// set default
-setLanguage("ro");
