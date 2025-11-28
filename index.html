@@ -6,7 +6,134 @@
   <title>MegaDoor.md - Uși de interior și exterior</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body><script>
+  const translations = {
+    ro: {
+      brandTitle: "Uși de interior și exterior",
+      navHome: "Acasă",
+      navExterior: "Uși exterior",
+      navInterior: "Uși interior",
+      navPVC: "Termopane / PVC",
+      navDiscount: "Uși Reducere",
+      navContact: "Contacte",
+      homeTitle: "MegaDoor.md – Uși de interior și exterior",
+      homeSubtitle: "Platformă pentru prezentarea și vânzarea ușilor de interior, exterior și a sistemelor PVC / termopan.",
+      homeCta: "Cere o ofertă gratuită",
+      homeBullet1: "Consultanță gratuită și măsurări la domiciliu*",
+      homeBullet2: "Montaj profesionist și garanție",
+      homeBullet3: "Modele moderne pentru apartamente și case",
+    },
+    ru: {
+      brandTitle: "Двери для интерьера и экстерьера",
+      navHome: "Главная",
+      navExterior: "Двери для улицы",
+      navInterior: "Двери для интерьера",
+      navPVC: "ПВХ / стеклопакеты",
+      navDiscount: "Двери со скидкой",
+      navContact: "Контакты",
+      homeTitle: "MegaDoor.md – Двери для интерьера и экстерьера",
+      homeSubtitle: "Платформа для презентации и продажи дверей для интерьера, экстерьера и ПВХ систем.",
+      homeCta: "Запросить бесплатное предложение",
+      homeBullet1: "Бесплатная консультация и замеры на дому*",
+      homeBullet2: "Профессиональная установка и гарантия",
+      homeBullet3: "Современные модели для квартир и домов",
+    },
+  };
+
+  const langButtons = document.querySelectorAll(".lang-btn");
+  const elementsToTranslate = document.querySelectorAll("[data-i18n]");
+
+  langButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const lang = button.getAttribute("data-lang");
+      langButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      elementsToTranslate.forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        el.textContent = translations[lang][key];
+      });
+    });
+  });
+</script><script>
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+</script>/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.main-nav a.active {
+  font-weight: bold;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav a {
+    margin: 5px 0;
+  }
+
+  .lang-switcher {
+    margin-top: 10px;
+  }
+}
   <header class="site-header">
     <div class="logo-wrapper">
       <img src="images/logo.png" alt="MegaDoor.md - Uși de interior și exterior" class="logo" />
