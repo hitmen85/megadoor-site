@@ -1,337 +1,300 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MegaDoor.md - Uși de interior și exterior</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body><script>
-  const translations = {
-    ro: {
-      brandTitle: "Uși de interior și exterior",
-      navHome: "Acasă",
-      navExterior: "Uși exterior",
-      navInterior: "Uși interior",
-      navPVC: "Termopane / PVC",
-      navDiscount: "Uși Reducere",
-      navContact: "Contacte",
-      homeTitle: "MegaDoor.md – Uși de interior și exterior",
-      homeSubtitle: "Platformă pentru prezentarea și vânzarea ușilor de interior, exterior și a sistemelor PVC / termopan.",
-      homeCta: "Cere o ofertă gratuită",
-      homeBullet1: "Consultanță gratuită și măsurări la domiciliu*",
-      homeBullet2: "Montaj profesionist și garanție",
-      homeBullet3: "Modele moderne pentru apartamente și case",
-    },
-    ru: {
-      brandTitle: "Двери для интерьера и экстерьера",
-      navHome: "Главная",
-      navExterior: "Двери для улицы",
-      navInterior: "Двери для интерьера",
-      navPVC: "ПВХ / стеклопакеты",
-      navDiscount: "Двери со скидкой",
-      navContact: "Контакты",
-      homeTitle: "MegaDoor.md – Двери для интерьера и экстерьера",
-      homeSubtitle: "Платформа для презентации и продажи дверей для интерьера, экстерьера и ПВХ систем.",
-      homeCta: "Запросить бесплатное предложение",
-      homeBullet1: "Бесплатная консультация и замеры на дому*",
-      homeBullet2: "Профессиональная установка и гарантия",
-      homeBullet3: "Современные модели для квартир и домов",
-    },
-  };
-
-  const langButtons = document.querySelectorAll(".lang-btn");
-  const elementsToTranslate = document.querySelectorAll("[data-i18n]");
-
-  langButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const lang = button.getAttribute("data-lang");
-      langButtons.forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      elementsToTranslate.forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        el.textContent = translations[lang][key];
-      });
-    });
-  });
-</script><script>
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth",
-      });
-    });
-  });
-</script>/* Base styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-}
-
-.logo-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 50px;
-  margin-right: 10px;
-}
-
-.main-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.main-nav a.active {
-  font-weight: bold;
-}
-
-.lang-switcher {
-  display: flex;
-  gap: 10px;
-}
-
-.lang-btn {
-  background: none;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.lang-btn.active {
-  background-color: #fff;
-  color: #333;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .main-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-nav a {
-    margin: 5px 0;
-  }  <!DOCTYPE html>
-  <html lang="ro">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MegaDoor</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MegaDoor.md - Uși de interior și exterior</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <script>
+      const translations = {
+        ro: {
+          brandTitle: "Uși de interior și exterior",
+          navHome: "Acasă",
+          navExterior: "Uși exterior",
+          navInterior: "Uși interior",
+          navPVC: "Termopane / PVC",
+          navDiscount: "Uși Reducere",
+          navContact: "Contacte",
+          homeTitle: "MegaDoor.md – Uși de interior și exterior",
+          homeSubtitle:
+            "Platformă pentru prezentarea și vânzarea ușilor de interior, exterior și a sistemelor PVC / termopan.",
+          homeCta: "Cere o ofertă gratuită",
+          homeBullet1: "Consultanță gratuită și măsurări la domiciliu*",
+          homeBullet2: "Montaj profesionist și garanție",
+          homeBullet3: "Modele moderne pentru apartamente și case",
+        },
+        ru: {
+          brandTitle: "Двери для интерьера и экстерьера",
+          navHome: "Главная",
+          navExterior: "Двери для улицы",
+          navInterior: "Двери для интерьера",
+          navPVC: "ПВХ / стеклопакеты",
+          navDiscount: "Двери со скидкой",
+          navContact: "Контакты",
+          homeTitle: "MegaDoor.md – Двери для интерьера и экстерьера",
+          homeSubtitle:
+            "Платформа для презентации и продажи дверей для интерьера, экстерьера и ПВХ систем.",
+          homeCta: "Запросить бесплатное предложение",
+          homeBullet1: "Бесплатная консультация и замеры на дому*",
+          homeBullet2: "Профессиональная установка и гарантия",
+          homeBullet3: "Современные модели для квартир и домов",
+        },
+      };
+
+      const langButtons = document.querySelectorAll(".lang-btn");
+      const elementsToTranslate = document.querySelectorAll("[data-i18n]");
+
+      langButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const lang = button.getAttribute("data-lang");
+          langButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          elementsToTranslate.forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            el.textContent = translations[lang][key];
+          });
+        });
+      });
+    </script>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+
+    .main-nav a { margin: 5px 0; } <!DOCTYPE html>
+    <html lang="ro">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MegaDoor</title>
+      </head>
+      <body>
+        <header>
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="ro">RO</button>
+            <button class="lang-btn" data-lang="ru">RU</button>
+          </div>
+        </header>
+
+        <main>
+          <h1 data-i18n="contactEmailTitle"></h1>
+          <p data-i18n="contactAddress"></p>
+        </main>
+
+        <footer>
+          <span id="year"></span>
+        </footer>
+
+        <script src="script.js"></script>
+      </body>
+    </html>
+
+    .lang-switcher { margin-top: 10px; }
+    <header class="site-header">
+      <div class="logo-wrapper">
+        <img
+          src="img/logo.png"
+          alt="MegaDoor.md - Uși de interior și exterior"
+          class="logo"
+        />
+        <div class="logo-text">
+          <span data-i18n="brandTitle">Uși de interior și exterior</span>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#acasa" data-i18n="navHome" class="active">Acasă</a>
+        <a href="#usi-exterior" data-i18n="navExterior">Uși exterior</a>
+        <a href="#usi-interior" data-i18n="navInterior">Uși interior</a>
+        <a href="#termopane" data-i18n="navPVC">Termopane / PVC</a>
+        <a href="#usi-reducere" data-i18n="navDiscount">Uși Reducere</a>
+        <a href="#contacte" data-i18n="navContact">Contacte</a>
+      </nav>
+
       <div class="lang-switcher">
-        <button class="lang-btn" data-lang="ro">RO</button>
-        <button class="lang-btn" data-lang="ru">RU</button>
+        <button data-lang="ro" class="lang-btn active">RO</button>
+        <button data-lang="ru" class="lang-btn">RU</button>
       </div>
     </header>
-  
+
     <main>
-      <h1 data-i18n="contactEmailTitle"></h1>
-      <p data-i18n="contactAddress"></p>
-    </main>
-  
-    <footer>
-      <span id="year"></span>
-    </footer>
-  
-    <script src="script.js"></script>
-  </body>
-  </html>
-
-  .lang-switcher {
-    margin-top: 10px;
-  }
-}
-  <header class="site-header">
-    <div class="logo-wrapper">
-      <img src="img/logo.png" alt="MegaDoor.md - Uși de interior și exterior" class="logo" />
-      <div class="logo-text">
-        <span data-i18n="brandTitle">Uși de interior și exterior</span>
-      </div>
-    </div>
-
-    <nav class="main-nav">
-      <a href="#acasa" data-i18n="navHome" class="active">Acasă</a>
-      <a href="#usi-exterior" data-i18n="navExterior">Uși exterior</a>
-      <a href="#usi-interior" data-i18n="navInterior">Uși interior</a>
-      <a href="#termopane" data-i18n="navPVC">Termopane / PVC</a>
-      <a href="#usi-reducere" data-i18n="navDiscount">Uși Reducere</a>
-      <a href="#contacte" data-i18n="navContact">Contacte</a>
-    </nav>
-
-    <div class="lang-switcher">
-      <button data-lang="ro" class="lang-btn active">RO</button>
-      <button data-lang="ru" class="lang-btn">RU</button>
-    </div>
-  </header>
-
-  <main>
-    <!-- ACASA -->
-    <section id="acasa" class="section">
-      <div class="section-content">
-        <h1 data-i18n="homeTitle">MegaDoor.md – Uși de interior și exterior</h1>
-        <p data-i18n="homeSubtitle">
-          Platformă pentru prezentarea și vânzarea ușilor de interior, exterior și a sistemelor PVC / termopan.
-        </p>
-        <a href="#contacte" class="primary-btn" data-i18n="homeCta">
-          Cere o ofertă gratuită
-        </a>
-      </div>
-      <div class="section-highlight">
-        <ul>
-          <li data-i18n="homeBullet1">Consultanță gratuită și măsurări la domiciliu*</li>
-          <li data-i18n="homeBullet2">Montaj profesionist și garanție</li>
-          <li data-i18n="homeBullet3">Modele moderne pentru apartamente și case</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- USI EXTERIOR -->
-    <section id="usi-exterior" class="section section-alt">
-      <div class="section-content">
-        <h2 data-i18n="extTitle">Uși exterior</h2>
-        <p data-i18n="extText">
-          Uși metalice și termoizolate, ideale pentru case, apartamente și spații comerciale. Siguranță, izolație
-          fonică și termică, design modern.
-        </p>
-        <div class="cards">
-          <article class="card">
-            <h3 data-i18n="extCard1Title">Uși de intrare blindate</h3>
-            <p data-i18n="extCard1Text">
-              Protecție sporită, multiple puncte de închidere, finisaje moderne și clasice.
-            </p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="extCard2Title">Uși pentru case</h3>
-            <p data-i18n="extCard2Text">
-              Rezistente la intemperii, cu paneluri decorative și sticlă securizată.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- USI INTERIOR -->
-    <section id="usi-interior" class="section">
-      <div class="section-content">
-        <h2 data-i18n="intTitle">Uși interior</h2>
-        <p data-i18n="intText">
-          Uși pentru camere, bucătării, băi și birouri. Gamă variată de culori, finisaje și dimensiuni.
-        </p>
-        <div class="cards">
-          <article class="card">
-            <h3 data-i18n="intCard1Title">Uși laminate / furnir</h3>
-            <p data-i18n="intCard1Text">
-              Aspect natural, rezistență bună și întreținere ușoară.
-            </p>
-          </article>
-          <article class="card">
-            <h3 data-i18n="intCard2Title">Uși din sticlă</h3>
-            <p data-i18n="intCard2Text">
-              Potrivite pentru birouri și spații moderne, lasă lumina să circule.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TERMOPANE / PVC -->
-    <section id="termopane" class="section section-alt">
-      <div class="section-content">
-        <h2 data-i18n="pvcTitle">Termopane / PVC</h2>
-        <p data-i18n="pvcText">
-          Ferestre și uși PVC cu geam termopan, profil de calitate și feronerie durabilă.
-        </p>
-        <ul class="list">
-          <li data-i18n="pvcBullet1">Profil 5-7 camere</li>
-          <li data-i18n="pvcBullet2">Sticlă termopan cu protecție termică și fonică</li>
-          <li data-i18n="pvcBullet3">Montaj profesionist și reglaj post-instalare</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- USI REDUCERE -->
-    <section id="usi-reducere" class="section">
-      <div class="section-content">
-        <h2 data-i18n="saleTitle">Uși Reducere</h2>
-        <p data-i18n="saleText">
-          Modele de uși la preț promoțional, stoc limitat. Ideal pentru renovări rapide.
-        </p>
-        <div class="sale-banner">
-          <span data-i18n="saleBadge">-20% până la -40%</span>
-          <p data-i18n="saleNote">
-            Pentru detalii actualizate despre promoții, contactează-ne telefonic sau prin formular.
+      <!-- ACASA -->
+      <section id="acasa" class="section">
+        <div class="section-content">
+          <h1 data-i18n="homeTitle">
+            MegaDoor.md – Uși de interior și exterior
+          </h1>
+          <p data-i18n="homeSubtitle">
+            Platformă pentru prezentarea și vânzarea ușilor de interior,
+            exterior și a sistemelor PVC / termopan.
           </p>
+          <a href="#contacte" class="primary-btn" data-i18n="homeCta">
+            Cere o ofertă gratuită
+          </a>
         </div>
-      </div>
-    </section>
+        <div class="section-highlight">
+          <ul>
+            <li data-i18n="homeBullet1">
+              Consultanță gratuită și măsurări la domiciliu*
+            </li>
+            <li data-i18n="homeBullet2">Montaj profesionist și garanție</li>
+            <li data-i18n="homeBullet3">
+              Modele moderne pentru apartamente și case
+            </li>
+          </ul>
+        </div>
+      </section>
 
-    <!-- CONTACTE -->
-    <section id="contacte" class="section section-alt">
-      <div class="section-content">
-        <h2 data-i18n="contactTitle">Contacte</h2>
-        <p data-i18n="contactText">
-          Scrie-ne sau sună-ne pentru oferte personalizate, măsurări și consultanță.
-        </p>
+      <!-- USI EXTERIOR -->
+      <section id="usi-exterior" class="section section-alt">
+        <div class="section-content">
+          <h2 data-i18n="extTitle">Uși exterior</h2>
+          <p data-i18n="extText">
+            Uși metalice și termoizolate, ideale pentru case, apartamente și
+            spații comerciale. Siguranță, izolație fonică și termică, design
+            modern.
+          </p>
+          <div class="cards">
+            <article class="card">
+              <h3 data-i18n="extCard1Title">Uși de intrare blindate</h3>
+              <p data-i18n="extCard1Text">
+                Protecție sporită, multiple puncte de închidere, finisaje
+                moderne și clasice.
+              </p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="extCard2Title">Uși pentru case</h3>
+              <p data-i18n="extCard2Text">
+                Rezistente la intemperii, cu paneluri decorative și sticlă
+                securizată.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        <div class="contact-grid">
-          <div>
-            <h3 data-i18n="contactPhoneTitle">Telefon</h3>
-            <p><a href="tel:+37360000000">+373 60 000 000</a></p>
+      <!-- USI INTERIOR -->
+      <section id="usi-interior" class="section">
+        <div class="section-content">
+          <h2 data-i18n="intTitle">Uși interior</h2>
+          <p data-i18n="intText">
+            Uși pentru camere, bucătării, băi și birouri. Gamă variată de
+            culori, finisaje și dimensiuni.
+          </p>
+          <div class="cards">
+            <article class="card">
+              <h3 data-i18n="intCard1Title">Uși laminate / furnir</h3>
+              <p data-i18n="intCard1Text">
+                Aspect natural, rezistență bună și întreținere ușoară.
+              </p>
+            </article>
+            <article class="card">
+              <h3 data-i18n="intCard2Title">Uși din sticlă</h3>
+              <p data-i18n="intCard2Text">
+                Potrivite pentru birouri și spații moderne, lasă lumina să
+                circule.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-            <h3 data-i18n="contactEmailTitle">Email</h3>
-            <p><a href="mailto:info@megadoor.md">info@megadoor.md</a></p>
+      <!-- TERMOPANE / PVC -->
+      <section id="termopane" class="section section-alt">
+        <div class="section-content">
+          <h2 data-i18n="pvcTitle">Termopane / PVC</h2>
+          <p data-i18n="pvcText">
+            Ferestre și uși PVC cu geam termopan, profil de calitate și
+            feronerie durabilă.
+          </p>
+          <ul class="list">
+            <li data-i18n="pvcBullet1">Profil 5-7 camere</li>
+            <li data-i18n="pvcBullet2">
+              Sticlă termopan cu protecție termică și fonică
+            </li>
+            <li data-i18n="pvcBullet3">
+              Montaj profesionist și reglaj post-instalare
+            </li>
+          </ul>
+        </div>
+      </section>
 
-            <h3 data-i18n="contactAddressTitle">Adresă</h3>
-            <p data-i18n="contactAddress">
-              Chișinău, str. Exemplu 10 (showroom MegaDoor)
+      <!-- USI REDUCERE -->
+      <section id="usi-reducere" class="section">
+        <div class="section-content">
+          <h2 data-i18n="saleTitle">Uși Reducere</h2>
+          <p data-i18n="saleText">
+            Modele de uși la preț promoțional, stoc limitat. Ideal pentru
+            renovări rapide.
+          </p>
+          <div class="sale-banner">
+            <span data-i18n="saleBadge">-20% până la -40%</span>
+            <p data-i18n="saleNote">
+              Pentru detalii actualizate despre promoții, contactează-ne
+              telefonic sau prin formular.
             </p>
           </div>
-
-          <form class="contact-form">
-            <label>
-              <span data-i18n="formName">Nume</span>
-              <input type="text" name="name" placeholder="Ion Popescu" />
-            </label>
-            <label>
-              <span data-i18n="formPhone">Telefon</span>
-              <input type="tel" name="phone" placeholder="+373 ..." />
-            </label>
-            <label>
-              <span data-i18n="formMessage">Mesaj</span>
-              <textarea name="message" rows="4"></textarea>
-            </label>
-            <button type="submit" class="primary-btn" data-i18n="formSubmit">
-              Trimite mesajul
-            </button>
-          </form>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> MegaDoor.md</p>
-  </footer>
+      <!-- CONTACTE -->
+      <section id="contacte" class="section section-alt">
+        <div class="section-content">
+          <h2 data-i18n="contactTitle">Contacte</h2>
+          <p data-i18n="contactText">
+            Scrie-ne sau sună-ne pentru oferte personalizate, măsurări și
+            consultanță.
+          </p>
 
-  <script src="script.js"></script>
-</body>
+          <div class="contact-grid">
+            <div>
+              <h3 data-i18n="contactPhoneTitle">Telefon</h3>
+              <p><a href="tel:+37360000000">+373 60 000 000</a></p>
+
+              <h3 data-i18n="contactEmailTitle">Email</h3>
+              <p><a href="mailto:info@megadoor.md">info@megadoor.md</a></p>
+
+              <h3 data-i18n="contactAddressTitle">Adresă</h3>
+              <p data-i18n="contactAddress">
+                Chișinău, str. Exemplu 10 (showroom MegaDoor)
+              </p>
+            </div>
+
+            <form class="contact-form">
+              <label>
+                <span data-i18n="formName">Nume</span>
+                <input type="text" name="name" placeholder="Ion Popescu" />
+              </label>
+              <label>
+                <span data-i18n="formPhone">Telefon</span>
+                <input type="tel" name="phone" placeholder="+373 ..." />
+              </label>
+              <label>
+                <span data-i18n="formMessage">Mesaj</span>
+                <textarea name="message" rows="4"></textarea>
+              </label>
+              <button type="submit" class="primary-btn" data-i18n="formSubmit">
+                Trimite mesajul
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> MegaDoor.md</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
